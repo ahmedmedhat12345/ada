@@ -1,0 +1,17 @@
+name : git hub actions demo
+on : push 
+jobs : 
+  Explore Github actions
+    runs-on : ubuntu-latest
+    steps :
+      - name : print triggering event
+        run : echo" ${{github.event_name}} "
+      - name : print os
+        run : echo "${{runner.os}}"
+      - name : branch
+        run : echo " ${{github.ref}}"
+      - name : repo action
+        uses : actions/checkout@v4
+      - name : list files in Repo
+        run : ls &{{github.workspace}}  
+    
