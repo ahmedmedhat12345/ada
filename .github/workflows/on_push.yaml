@@ -1,17 +1,18 @@
-name: git hub actions demo
-on: push 
-jobs: 
-  Explore Github actions
+name: GitHub Actions Demo
+on: push
+jobs:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: print triggering event
-        run: echo" ${{github.event_name}} "
-      - name: print os
-        run: echo "${{runner.os}}"
-      - name: branch
-        run: echo " ${{github.ref}}"
-      - name: repo action
+      - name: Print triggering event
+        run: echo "${{ github.event_name }}"
+      - name: Print OS
+        run: echo "${{ runner.os }}"
+      - name: Branch
+        run: echo "${{ github.ref }}"
+      - name: Repo action
         uses: actions/checkout@v4
-      - name: list files in Repo
-        run: ls &{{github.workspace}}  
+      - name: List files in Repo
+        run: ls ${{ github.workspace }}
+
     
